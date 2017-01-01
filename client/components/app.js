@@ -11,9 +11,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <div>Meteor</div>
-        <div>React</div>
-        <div>Boiler</div>
+        <h1 className="text-center">Welcome to App</h1>
       </div>
     );
   }
@@ -22,6 +20,6 @@ class App extends Component {
 export default createContainer(() => {
   Meteor.subscribe('collection.content');
   //returned as this.props.content
-  return { content: Collections.find().fetch() };
+  return { content: Collection.find().fetch() };
 
 }, App);

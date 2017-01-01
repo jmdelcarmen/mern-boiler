@@ -1,0 +1,8 @@
+/* CSS declarations go here */
+
+body {
+  color: #fff;
+  background: url('https://cdn-images-1.medium.com/max/2000/1*h8RnloU7ijblSNjq9LgWag.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
