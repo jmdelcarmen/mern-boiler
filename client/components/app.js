@@ -3,18 +3,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logSomething } from '../actions/index';
-// import { createContainer } from 'meteor/react-meteor-data';
 
 //Collections
 import { Collection } from '../../imports/collections/collection';
 
 class App extends Component {
   componentWillMount() {
-    this.props.logSomething();
+    this.props.logSomething(); //testing action-creator
   }
 
   render() {
-    console.log(this.props.collection);
+    console.log(this.props.collection); //testing action-creator
     return(
       <div>
         <h1 className="text-center"><i>Meteor + React + Redux</i></h1>

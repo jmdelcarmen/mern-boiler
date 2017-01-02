@@ -2,10 +2,13 @@
 
 export const LOG_SOMETHING = 'LOG_SOMETHING';
 
+function getCollection() {
+  return Meteor.callPromise('collections.get');
+}
+
 export function logSomething() {
-  console.log('Logging Something');
   return {
     type: LOG_SOMETHING,
-    payload: 'Random text'
+    payload: getCollection()
   }
 }

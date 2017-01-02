@@ -7,6 +7,10 @@ Meteor.methods({
   //meteor-method = mongoDB queries
   'collections.post': function () {
     return Collection.insert({ text: 'sup' });
+  },
+
+  'collections.get': function () {
+    return Collection.find({}).fetch();
   }
 
 });
