@@ -1,14 +1,10 @@
 'use strict';
 
-export const LOG_SOMETHING = 'LOG_SOMETHING';
+export const POSTS_DATA = 'POSTS_DATA';
 
-function getCollection() {
-  return Meteor.callPromise('collections.get');
-}
-
-export function logSomething() {
+export function getPosts() {
   return {
-    type: LOG_SOMETHING,
-    payload: getCollection()
+    type: POSTS_DATA,
+    payload: Meteor.callPromise('posts.get') //sends a promise to reducer_collection.js
   }
 }

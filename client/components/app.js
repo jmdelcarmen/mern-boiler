@@ -2,18 +2,19 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { logSomething } from '../actions/index';
+import { getPosts } from '../actions/index';
 
 //Collections
-import { Collection } from '../../imports/collections/collection';
+import { Posts } from '../../imports/collections/posts';
 
 class App extends Component {
   componentWillMount() {
-    this.props.logSomething(); //testing action-creator
+    this.props.getPosts(); //testing action-creator
+    Meteor.callPromise('posts.post'); //testing post inserts
   }
 
   render() {
-    console.log(this.props.collection); //testing action-creator
+    console.log(this.props.posts); //testing state
     return(
       <div>
         <h1 className="text-center"><i>Meteor + React + Redux</i></h1>
@@ -23,11 +24,10 @@ class App extends Component {
   }
 }
 
-
 function mapStateToProps(state) {
   return {
-    collection: state.collection
+    posts: state.posts
   }
 }
 
-export default connect(mapStateToProps, { logSomething })(App);
+export default connect(mapStateToProps, { getPosts })(App);

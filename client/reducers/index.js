@@ -1,9 +1,9 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import CollectionReducer from './reducer_collection';
+import PostsReducer from './reducer_posts';
 const rootReducer = combineReducers({
-  collection: CollectionReducer
+  posts: PostsReducer
 });
 
 export default rootReducer;

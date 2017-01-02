@@ -3,15 +3,13 @@
 import { Meteor } from 'meteor/meteor';
 
 //Collections
-import { Collection } from '../imports/collections/collection';
+import { Posts } from '../imports/collections/posts';
 
 Meteor.startup(() => {
   //Publish and Subscribe system
-
-  Meteor.publish('collection.content', function () {
-    return Collection.find({}, {});
+  Meteor.publish('posts.content', function () {
+    return Posts.find({}, {});
   });
-
 
   console.log('Construction ongoing at port 3000 . . .');
 });
