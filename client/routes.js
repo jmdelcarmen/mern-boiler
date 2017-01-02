@@ -1,19 +1,11 @@
 'use strict';
 
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
 
 //Components
 import App from './components/app';
 
-const routes =(
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-    </Route>
-  </Router>
+export default (
+  <Route path="/" component={App} />
 );
-
-Meteor.startup(() => {
-  render(routes, document.querySelector('.app-container'));
-})

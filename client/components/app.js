@@ -1,25 +1,34 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
+import { connect } from 'react-redux';
+import { logSomething } from '../actions/index';
+// import { createContainer } from 'meteor/react-meteor-data';
 
 //Collections
 import { Collection } from '../../imports/collections/collection';
-//Components
 
 class App extends Component {
+  componentWillMount() {
+    this.props.logSomething();
+  }
+
   render() {
+    console.log(this.props.collection);
     return(
       <div>
         <h1 className="text-center">Welcome to App</h1>
+        {this.props.children}
       </div>
     );
   }
 }
 
-export default createContainer(() => {
-  Meteor.subscribe('collection.content');
-  //returned as this.props.content
-  return { content: Collection.find().fetch() };
 
-}, App);
+function mapStateToProps(state) {
+  return {
+    collection: state.collection
+  }
+}
+
+export default connect(mapStateToProps, { logSomething })(App);
