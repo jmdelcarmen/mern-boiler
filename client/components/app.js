@@ -17,7 +17,7 @@ class App extends Component {
     console.log(this.props.collection);
     return(
       <div>
-        <h1 className="text-center">Welcome to App</h1>
+        <h1 className="text-center"><i>Meteor + React + Redux</i></h1>
         {this.props.children}
       </div>
     );
