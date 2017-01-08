@@ -1,6 +1,6 @@
 'use strict';
 
-import { POSTS_DATA } from '../actions/index';
+import { POSTS_DATA } from '../actions/types';
 
 export default function (state = [], action) {
   switch(action.type) {

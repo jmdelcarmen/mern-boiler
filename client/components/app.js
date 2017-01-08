@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPosts } from '../actions/index';
+import Navbar from './header/navbar';
 
 //Collections
 import { Posts } from '../../imports/collections/posts';
@@ -14,10 +15,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.posts); //testing state
     return(
       <div>
-        <h1 className="text-center"><i>Meteor + React + Redux</i></h1>
+        <Navbar />
         {this.props.children}
       </div>
     );

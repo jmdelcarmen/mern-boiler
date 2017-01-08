@@ -6,3 +6,20 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.navbar a, .navbar a:focus {
+  border: none;
+}
+
+.navbar a:hover {
+  cursor: pointer;
+}
+
+form {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+}
+
+input {
+  color: #ddd !important;
+}

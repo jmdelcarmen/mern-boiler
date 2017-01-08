@@ -1,0 +1,2 @@
+export const AUTHENTICATE = 'AUTHENTICATE';
+export const POSTS_DATA = 'POSTS_DATA';
